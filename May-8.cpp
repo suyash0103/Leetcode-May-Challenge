@@ -11,9 +11,10 @@ public:
         
         if(den == 0)
         {
+            int newden;
             for(int i = 1; i < n - 1; i++)
             {
-                int newden = coordinates[i + 1][0] - coordinates[i][0];
+                newden = coordinates[i + 1][0] - coordinates[i][0];
                 if(newden != 0)
                     return false;
             }
@@ -22,13 +23,16 @@ public:
         else
         {
             double slope = num / den;
+            double newnum;
+            double newden;
+            double newslope;
             for(int i = 1; i < n - 1; i++)
             {
-                double newnum = coordinates[i + 1][1] - coordinates[i][1];
-                double newden = coordinates[i + 1][0] - coordinates[i][0];
+                newnum = coordinates[i + 1][1] - coordinates[i][1];
+                newden = coordinates[i + 1][0] - coordinates[i][0];
                 if(newden == 0)
                     return false;
-                double newslope = newnum / newden;
+                newslope = newnum / newden;
                 if(slope != newslope)
                     return false;
             }
