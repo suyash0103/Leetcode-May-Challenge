@@ -1,7 +1,10 @@
 class Solution {
 public:
     bool isPerfectSquare(int num) {
-        int left = 1, right = num;
+        if(num == 1)
+            return true;
+        
+        int left = 1, right = num / 2;
         while(left <= right)
         {
             int mid = left + (right - left) / 2;
